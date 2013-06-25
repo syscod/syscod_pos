@@ -123,9 +123,9 @@ class pos_details_summary(report_sxw.rml_parse):
         return '%s' % max_date
 
 
-report_sxw.report_sxw('report.pos.details_summary',
+report_sxw.report_sxw('report.pos.details_summary1',
                                             'pos.order',
-                                            'addons/point_of_sale/report/pos_details_summary.rml',
+                                            'addons/point_sale/report/pos_details_summary.rml',
                                             parser=pos_details_summary,
                                             header='internal')
 

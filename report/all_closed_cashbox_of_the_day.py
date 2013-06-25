@@ -135,6 +135,6 @@ class all_closed_cashbox_of_the_day(report_sxw.rml_parse):
         res = self.cr.dictfetchall()
         return res[0]['net_total'] or 0.0
 
-report_sxw.report_sxw('report.all.closed.cashbox.of.the.day', 'account.bank.statement', 'addons/point_of_sale/report/all_closed_cashbox_of_the_day.rml', parser=all_closed_cashbox_of_the_day,header='internal')
+report_sxw.report_sxw('report.all.closed.cashbox.of.the.day1', 'account.bank.statement', 'addons/point_sale/report/all_closed_cashbox_of_the_day.rml', parser=all_closed_cashbox_of_the_day,header='internal')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

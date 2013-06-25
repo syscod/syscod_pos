@@ -72,6 +72,6 @@ class order(report_sxw.rml_parse):
         data = self.cr.dictfetchall()
         return data
 
-report_sxw.report_sxw('report.pos.receipt', 'pos.order', 'addons/point_of_sale/report/pos_receipt.rml', parser=order, header=False)
+report_sxw.report_sxw('report.pos.receipt1', 'pos.order', 'addons/point_sale/report/pos_receipt.rml', parser=order, header=False)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -49,12 +49,12 @@
 -
   !record {model: pos.session, id: pos_order_session0}:
     user_id: 1
-    config_id: point_of_sale.pos_config_main
+    config_id: point_sale.pos_config_main
 -
   I open a new PoS Session wizard
 -
   !record {model: pos.session.opening, id: pos_order_session_wizard0}:
-    pos_config_id: point_of_sale.pos_config_main
+    pos_config_id: point_sale.pos_config_main
 - 
   I click on create a new session button
 - 

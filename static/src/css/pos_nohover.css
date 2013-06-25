@@ -418,6 +418,27 @@
     display: none;
 }
 
+.point-of-sale .searchbarcode {
+    position: absolute;
+    right: 2px;
+}
+.point-of-sale .searchbarcode input {
+    width: 130px;
+    border-radius: 11px;
+    border: 1px solid #cecbcb;
+    padding: 3px 19px;
+    margin: 6px;
+    background: url("../img/barcode.png") no-repeat 5px;
+    background-color: grown;
+}
+.point-of-sale .searchbarcode-clear {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    cursor: pointer;
+    display: none;
+}
+
 /*  c) the categories list */
 
 .point-of-sale #categories {

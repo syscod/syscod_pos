@@ -59,6 +59,6 @@ class pos_payment_report(report_sxw.rml_parse):
     def _pos_payment_total(self, o):
         return self.total
 
-report_sxw.report_sxw('report.pos.payment.report', 'pos.order', 'addons/point_of_sale/report/pos_payment_report.rml', parser=pos_payment_report,header='internal')
+report_sxw.report_sxw('report.pos.payment.report1', 'pos.order', 'addons/point_sale/report/pos_payment_report.rml', parser=pos_payment_report,header='internal')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

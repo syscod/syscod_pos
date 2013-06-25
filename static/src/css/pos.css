@@ -436,6 +436,30 @@
     display: none;
 }
 
+/*  b.1) the search box BAR CODE*/
+
+.point-of-sale .searchbarcode{
+    position: absolute;
+    right: 182px;
+}
+.point-of-sale .searchbarcode input {
+    width: 150px;
+    border-radius: 11px;
+    color: White;
+    border: 1px solid #cecbcb;
+    padding: 3px 19px;
+    margin: 6px;
+    background: url("../img/barcode.png") no-repeat 5px;
+    background-color: green;
+}
+.point-of-sale .searchbarcode-clear {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    cursor: pointer;
+    display: none;
+}
+
 /*  c) the categories list */
 
 .point-of-sale #categories {
@@ -768,7 +792,7 @@
 
 .point-of-sale .pos-sale-ticket {
     text-align: left;
-    width: 300px;
+    width: 750px; /*300*/
     background-color: white;
     margin: 20px;
     padding: 15px;
@@ -824,7 +848,7 @@
     .point-of-sale .pos-sale-ticket{
         margin-left: auto !important;
         margin-right: auto !important;
-        border: solid 1px black !important;
+       /* border: solid 1px black !important;*/
     }
 }
 

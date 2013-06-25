@@ -42,8 +42,8 @@ class PointOfSaleController(openerp.addons.web.http.Controller):
                 elif f.endswith(('.png','.PNG','.jpg','.JPG','.jpeg','.JPEG','.gif','.GIF')):
                     ml.append(dstpath)
 
-        imgdir = openerp.modules.get_module_resource('point_of_sale','static/src/img');
-        load_css_img(imgdir,'/point_of_sale/static/src/img')
+        imgdir = openerp.modules.get_module_resource('point_sale','static/src/img');
+        load_css_img(imgdir,'/point_sale/static/src/img')
         
         products = req.session.model('product.product')
         for p in products.search_read([('pos_categ_id','!=',False)], ['name']):

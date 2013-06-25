@@ -1,13 +1,12 @@
-function openerp_pos_basewidget(instance, module){ //module is instance.point_of_sale
-
-    // This is a base class for all Widgets in the POS. It exposes relevant data to the 
-    // templates : 
-    // - widget.currency : { symbol: '$' | '€' | ..., position: 'before' | 'after }
-    // - widget.format_currency(amount) : this method returns a formatted string based on the
-    //   symbol, the position, and the amount of money.
-    // if the PoS is not fully loaded when you instanciate the widget, the currency might not
-    // yet have been initialized. Use __build_currency_template() to recompute with correct values
-    // before rendering.
+function openerp_pos_basewidget(instance, module){ //module is instance.point_sale
+    //This is a base class for all Widgets in the POS. It exposes relevant data to the 
+    //templates : 
+    //- widget.currency : { symbol: '$' | '€' | ..., position: 'before' | 'after }
+    //- widget.format_currency(amount) : this method returns a formatted string based on the
+    //symbol, the position, and the amount of money.
+    //if the PoS is not fully loaded when you instanciate the widget, the currency might not
+    //yet have been initialized. Use __build_currency_template() to recompute with correct values
+    //before rendering.
 
     module.PosBaseWidget = instance.web.Widget.extend({
         init:function(parent,options){
@@ -32,7 +31,7 @@ function openerp_pos_basewidget(instance, module){ //module is instance.point_of
                     amount = Math.round(amount*100)/100;
                     amount = amount.toFixed(decimals);
                 }
-                if(this.currency.position === 'after'){
+                 if(this.currency.position === 'after'){
                     return amount + ' ' + this.currency.symbol;
                 }else{
                     return this.currency.symbol + ' ' + amount;

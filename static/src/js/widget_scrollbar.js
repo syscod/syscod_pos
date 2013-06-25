@@ -14,7 +14,7 @@
  * on_show: this function will be called with the scrollbar as sole argument when the scrollbar is shown
  * on_hide: this function will be called with the scrollbar as sole argument when the scrollbar is hidden
  */
-function openerp_pos_scrollbar(instance, module){ //module is instance.point_of_sale
+function openerp_pos_scrollbar(instance, module){ //module is instance.point_sale
 
     module.ScrollbarWidget = instance.web.Widget.extend({
         template:'ScrollbarWidget',

@@ -1,5 +1,5 @@
 
-function openerp_pos_devices(instance,module){ //module is instance.point_of_sale
+function openerp_pos_devices(instance,module){ //module is instance.point_sale
 
     // this object interfaces with the local proxy to communicate to the various hardware devices
     // connected to the Point of Sale. As the communication only goes from the POS to the proxy,

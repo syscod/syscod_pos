@@ -42,6 +42,11 @@ function openerp_pos_db(instance, module){
 
             this.product_by_id = {};
             this.product_by_ean13 = {};
+            
+            //by ed.winTG Search product by default_code with the barcode	
+            this.product_by_reference={};
+            //
+            
             this.product_by_category_id = {};
 
             this.category_by_id = {};
@@ -150,6 +155,15 @@ function openerp_pos_db(instance, module){
             if(product.ean13){
                 str += '|' + product.ean13;
             }
+            
+            //by Ed.win TG
+           if(product.default_code){
+        	  // alert(str);
+            	str += '|' + product.default_code;
+            }
+            //
+            
+            //alert(str +'-->FUE');
             var packagings = this.packagings_by_product_id[product.id] || [];
             for(var i = 0; i < packagings.length; i++){
                 str += '|' + packagings[i].ean;
@@ -164,7 +178,10 @@ function openerp_pos_db(instance, module){
             }
             for(var i = 0, len = products.length; i < len; i++){
                 var product = products[i];
+               
                 var search_string = this._product_search_string(product);
+                //alert(search_string);
+                
                 var categ_id = product.pos_categ_id ? product.pos_categ_id[0] : this.root_category_id;
                 if(!stored_categories[categ_id]){
                     stored_categories[categ_id] = [];
@@ -194,6 +211,11 @@ function openerp_pos_db(instance, module){
                 if(product.ean13){
                     this.product_by_ean13[product.ean13] = product;
                 }
+                //by ed.winTG
+                if(product.default_code){
+                    this.product_by_reference[product.default_code] = product;
+                }
+                //
             }
         },
         add_packagings: function(packagings){
@@ -204,8 +226,8 @@ function openerp_pos_db(instance, module){
                     this.packagings_by_product_id[pack.product_id[0]] = [];
                 }
                 this.packagings_by_product_id[pack.product_id[0]].push(pack);
-                if(pack.ean){
-                    this.packagings_by_ean13[pack.ean] = pack;
+                if(pack.ean13){
+                    this.packagings_by_ean13[pack.ean13] = pack;
                 }
             }
         },
@@ -238,6 +260,14 @@ function openerp_pos_db(instance, module){
             }
             return undefined;
         },
+        //by Ed.win TG
+        get_product_by_reference: function(ref){
+            if(this.product_by_reference[ref]){
+                return this.product_by_reference[ref];
+            }
+        },
+        //
+        
         get_product_by_category: function(category_id){
             var product_ids  = this.product_by_category_id[category_id];
             var list = [];
@@ -258,6 +288,7 @@ function openerp_pos_db(instance, module){
             for(var i = 0; i < this.limit; i++){
                 r = re.exec(this.category_search_string[category_id]);
                 if(r){
+                	//alert(r[1]);
                     var id = Number(r[1]);
                     results.push(this.get_product_by_id(id));
                 }else{

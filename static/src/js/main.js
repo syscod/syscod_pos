@@ -1,11 +1,12 @@
+openerp.point_sale = function(instance) {
 
-openerp.point_of_sale = function(instance) {
+    instance.point_sale = {};
 
-    instance.point_of_sale = {};
+    var module = instance.point_sale;
 
-    var module = instance.point_of_sale;
-
-    openerp_pos_db(instance,module);         // import db.js
+    openerp_pos_db(instance,module);  		 // import db.js
+    
+   // openerp_pos_msgbox(instance,module);	 // import msgBox
 
     openerp_pos_models(instance,module);     // import pos_models.js
 
@@ -21,7 +22,7 @@ openerp.point_of_sale = function(instance) {
 
     openerp_pos_devices(instance,module);    // import pos_devices.js
 
-    instance.web.client_actions.add('pos.ui', 'instance.point_of_sale.PosWidget');
+    instance.web.client_actions.add('pos.ui', 'instance.point_sale.PosWidget');
 };
 
     

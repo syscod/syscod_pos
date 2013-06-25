@@ -21,11 +21,11 @@
 
 
 {
-    'name': 'Point of Sale',
-    'version': '1.0.1',
+    'name': 'Point of Sale with modifications',
+    'version': '1.0.2',
     'category': 'Point Of Sale',
     'sequence': 6,
-    'summary': 'Touchscreen Interface for Shops',
+    'summary': 'Touchscreen and barcode reader Interface for Shops',
     'description': """
 Quick and Easy sale process
 ===========================
@@ -51,7 +51,7 @@ Main Features
     'images': ['images/pos_touch_screen.jpeg', 'images/pos_session.jpeg', 'images/pos_analysis.jpeg','images/sale_order_pos.jpeg','images/product_pos.jpeg'],
     'depends': ['sale_stock'],
     'data': [
-        'security/point_of_sale_security.xml',
+        'security/point_sale_security.xml',
         'security/ir.model.access.csv',
         'wizard/pos_details.xml',
         'wizard/pos_confirm.xml',
@@ -65,26 +65,26 @@ Main Features
         'wizard/pos_payment.xml',
         'wizard/pos_box.xml',
         'wizard/pos_session_opening.xml',
-        'point_of_sale_report.xml',
-        'point_of_sale_view.xml',
-        'point_of_sale_data.xml',
+        'point_sale_report.xml',
+        'point_sale_view.xml',
+        'point_sale_data.xml',
         'report/pos_order_report_view.xml',
-        'point_of_sale_sequence.xml',
-        'point_of_sale_workflow.xml',
+        'point_sale_sequence.xml',
+        'point_sale_workflow.xml',
         'account_statement_view.xml',
         'account_statement_report.xml',
         'res_users_view.xml',
         'res_partner_view.xml',
     ],
     'demo': [
-        'point_of_sale_demo.xml',
+        'point_sale_demo.xml',
         'account_statement_demo.xml',
         'test/00_register_open.yml'
     ],
     'test': [
         'test/01_order_to_payment.yml',
         'test/02_order_to_invoice.yml',
-        'test/point_of_sale_report.yml'
+        'test/point_sale_report.yml'
     ],
     'installable': True,
     'application': True,
@@ -99,11 +99,15 @@ Main Features
         'static/src/js/devices.js',
         'static/src/js/screens.js',
         'static/src/js/main.js',
+        #'static/src/js/jquery.msgBox.js', by ed.winTG
+        #'static/src/js/jquery-1.4.1.js',by ed.winTG
+        
     ],
     'css': [
         'static/src/css/pos.css', # this is the default css with hover effects
         #'static/src/css/pos_nohover.css', # this css has no hover effects (for resistive touchscreens)
         'static/src/css/keyboard.css'
+        #'static/src/css/msgBoxLight.css'by ed.winTG
     ],
     'qweb': ['static/src/xml/pos.xml'],
     'auto_install': False,

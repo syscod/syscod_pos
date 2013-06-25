@@ -45,6 +45,6 @@ class pos_sales_user(report_sxw.rml_parse):
 
         return self.cr.dictfetchall()
 
-report_sxw.report_sxw('report.pos.sales.user', 'pos.order', 'addons/point_of_sale/report/pos_sales_user.rml', parser=pos_sales_user,header='internal')
+report_sxw.report_sxw('report.pos.sales.user1', 'pos.order', 'addons/point_sale/report/pos_sales_user.rml', parser=pos_sales_user,header='internal')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

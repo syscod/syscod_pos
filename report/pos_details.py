@@ -197,6 +197,6 @@ class pos_details(report_sxw.rml_parse):
             'get_user_names': self._get_user_names,
         })
 
-report_sxw.report_sxw('report.pos.details', 'pos.order', 'addons/point_of_sale_singer/report/pos_details.rml', parser=pos_details, header='internal')
+report_sxw.report_sxw('report.pos.details1', 'pos.order', 'addons/point_sale_singer/report/pos_details.rml', parser=pos_details, header='internal')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
